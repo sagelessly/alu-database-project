@@ -1,0 +1,34 @@
+-- task 1
+-- we checked the tables and all foreign keys like student_id and course_id match up perfectly with the main tables. no broken links.
+
+-- task 2
+-- the database is normalized. things like students and faculty are in their own tables so we don't repeat names. the junction tables (student_courses and student_activities) handle the many to many relationships fine without duplicating data.
+
+
+-- task 3: join queries
+
+-- query 1: student enrollment info
+SELECT student_name, course_name, faculty_name
+FROM Student_Courses
+JOIN Students ON Student_Courses.student_id = Students.student_id
+JOIN Courses ON Student_Courses.course_id = Courses.course_id
+JOIN Faculty ON Courses.faculty_id = Faculty.faculty_id;
+
+-- query 2: student activities info
+SELECT student_name, activity_name, faculty_name
+FROM Student_Activities
+JOIN Students ON Student_Activities.student_id = Students.student_id
+JOIN Extra_Curricular_Activities ON Student_Activities.activity_id = Extra_Curricular_Activities.activity_id
+JOIN Faculty ON Extra_Curricular_Activities.faculty_advisor_id = Faculty.faculty_id;
+
+-- query 3: faculty and courses
+SELECT faculty_name, course_name
+FROM Courses
+JOIN Faculty ON Courses.faculty_id = Faculty.faculty_id;
+
+
+-- task 4: aggregate query
+SELECT course_name, COUNT(student_id) AS total_students
+FROM Courses
+LEFT JOIN Student_Courses ON Courses.course_id = Student_Courses.course_id
+GROUP BY course_name;
