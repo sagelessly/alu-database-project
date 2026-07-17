@@ -1,0 +1,85 @@
+[34m2026-07-17 20:05:56[39m Executing: CREATE TABLE Students (     student_id INT AUTO_INCREMENT PRIMARY KEY,     first_name VARCHAR(50),     last_name VARCHAR(50),     email VARCHAR(100) )
+[34m2026-07-17 20:05:57[39m [32mResult: 0 rows affected in 330ms[39m
+[34m2026-07-17 20:08:06[39m Executing: INSERT INTO Students (first_name,last_name,email) VALUES ("NDEGEYA Nina","UWASE","u.ndegeya@alustudent.com")
+[34m2026-07-17 20:08:06[39m [31mExecute fail : Unknown column 'NDEGEYA Nina' in 'field list'[39m
+[34m2026-07-17 20:14:42[39m Executing: DESCRIBE Students
+[34m2026-07-17 20:14:42[39m [32mResult: 4 rows retrieved in 1.4s[39m
+[34m2026-07-17 20:15:06[39m Executing: INSERT INTO Students (first_name, last_name, email) VALUES ('NDEGEYA Nina', 'UWASE', 'u.ndegeya@alustudent.com')
+[34m2026-07-17 20:15:06[39m [32mResult: 1 rows affected in 401ms[39m
+[34m2026-07-17 20:15:29[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:15:29[39m [32mResult: 1 rows retrieved in 208ms[39m
+[34m2026-07-17 20:23:00[39m Executing: DROP TABLE Students
+[34m2026-07-17 20:23:00[39m [32mResult: 0 rows affected in 1.5s[39m
+[34m2026-07-17 20:23:21[39m Executing: CREATE TABLE Students (     student_id INT AUTO_INCREMENT PRIMARY KEY,     name VARCHAR(100) NOT NULL,     email VARCHAR(100) NOT NULL,     classroom_id INT,     enrollment_date DATE,     FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id) )
+[34m2026-07-17 20:23:21[39m [31mExecute fail : Failed to open the referenced table 'Classroom'[39m
+[34m2026-07-17 20:24:04[39m Executing: CREATE TABLE Students (     student_id INT AUTO_INCREMENT PRIMARY KEY,     name VARCHAR(100) NOT NULL,     email VARCHAR(100) NOT NULL,     classroom_id INT,     enrollment_date DATE )
+[34m2026-07-17 20:24:04[39m [32mResult: 0 rows affected in 223ms[39m
+[34m2026-07-17 20:24:31[39m Executing: INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES ('NDEGEYA Nina UWASE', 'u.ndegeya@alustudent.com', 1, '2026-01-15'), ('John Doe', 'john@alustudent.com', 1, '2026-01-15'), ('Grace Mukamana', 'grace@alustudent.com', 2, '2026-01-15'), ('Eric Niyonzima', 'eric@alustudent.com', 2, '2026-01-15'), ('Alice Uwimana', 'alice@alustudent.com', 3, '2026-01-15')
+[34m2026-07-17 20:24:31[39m [32mResult: 5 rows affected in 209ms[39m
+[34m2026-07-17 20:24:57[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:24:57[39m [32mResult: 5 rows retrieved in 259ms[39m
+[34m2026-07-17 20:26:20[39m Executing: INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES ('NDEGEYA Nina UWASE', 'u.ndegeya@alustudent.com', 1, '2026-01-15'), ('alex doi', 'alex@alustudent.com', 8, '2026-01-1'), ('Grace Mukamana', 'grace@alustudent.com', 2, '2026-01-15'), ('Eric Niyonzima', 'eric@alustudent.com', 2, '2026-01-15'), ('Alice Uwimana', 'alice@alustudent.com', 3, '2026-01-15')
+[34m2026-07-17 20:26:20[39m [32mResult: 5 rows affected in 199ms[39m
+[34m2026-07-17 20:26:25[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:26:25[39m [32mResult: 10 rows retrieved in 258ms[39m
+[34m2026-07-17 20:26:49[39m Executing: TRUNCATE table Students
+[34m2026-07-17 20:26:49[39m [32mResult: 0 rows affected in 247ms[39m
+[34m2026-07-17 20:26:56[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:26:56[39m [32mResult: Completed in 279ms[39m
+[34m2026-07-17 20:27:05[39m Executing: INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES ('NDEGEYA Nina UWASE', 'u.ndegeya@alustudent.com', 1, '2026-01-15'), ('alex doi', 'alex@alustudent.com', 8, '2026-01-1'), ('Grace Mukamana', 'grace@alustudent.com', 2, '2026-01-15'), ('Eric Niyonzima', 'eric@alustudent.com', 2, '2026-01-15'), ('Alice Uwimana', 'alice@alustudent.com', 3, '2026-01-15')
+[34m2026-07-17 20:27:05[39m [32mResult: 5 rows affected in 193ms[39m
+[34m2026-07-17 20:27:10[39m Executing: TRUNCATE table Students
+[34m2026-07-17 20:27:10[39m [32mResult: 0 rows affected in 200ms[39m
+[34m2026-07-17 20:27:13[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:27:13[39m [32mResult: Completed in 286ms[39m
+[34m2026-07-17 20:27:58[39m Executing: INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES ('NDEGEYA Nina', 'u.ndegeya@alustudent.com', 1, '2026-01-15'), ('alex doi', 'alex@alustudent.com', 8, '2026-01-1'), ('Grace Mukamana', 'grace@alustudent.com', 2, '2026-01-15'), ('Eric Niyonzima', 'eric@alustudent.com', 4, '2026-01-15'), ('Alice Uwimana', 'alice@alustudent.com', 3, '2026-01-15')
+[34m2026-07-17 20:27:59[39m [32mResult: 5 rows affected in 191ms[39m
+[34m2026-07-17 20:28:01[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:28:02[39m [32mResult: 5 rows retrieved in 287ms[39m
+[34m2026-07-17 20:28:27[39m Executing: UPDATE Students SET email = 'nina@alu.edu' WHERE student_id = 1
+[34m2026-07-17 20:28:27[39m [32mResult: 1 rows affected in 287ms[39m
+[34m2026-07-17 20:28:36[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:28:36[39m [32mResult: 5 rows retrieved in 183ms[39m
+[34m2026-07-17 20:28:51[39m Executing: DELETE FROM Students WHERE student_id = 5
+[34m2026-07-17 20:28:51[39m [32mResult: 1 rows affected in 256ms[39m
+[34m2026-07-17 20:28:57[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:28:58[39m [32mResult: 4 rows retrieved in 273ms[39m
+[34m2026-07-17 20:29:14[39m Executing: SELECT * FROM Students WHERE classroom_id = 1 LIMIT 100
+[34m2026-07-17 20:29:14[39m [32mResult: 1 rows retrieved in 182ms[39m
+[34m2026-07-17 20:29:22[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 20:29:22[39m [32mResult: 4 rows retrieved in 203ms[39m
+[34m2026-07-17 20:29:29[39m Executing: SELECT * FROM Students WHERE classroom_id = 1 LIMIT 100
+[34m2026-07-17 20:29:29[39m [32mResult: 1 rows retrieved in 181ms[39m
+[34m2026-07-17 21:21:30[39m Executing: SELECT * FROM Students LIMIT 100
+[34m2026-07-17 21:21:30[39m [32mResult: 4 rows retrieved in 1.3s[39m
+[34m2026-07-17 22:17:15[39m Executing: CREATE TABLE Classroom (     classroom_id INT AUTO_INCREMENT PRIMARY KEY,     room_number VARCHAR(10) NOT NULL,     building VARCHAR(50) NOT NULL,     capacity INT NOT NULL )
+[34m2026-07-17 22:17:15[39m [32mResult: 0 rows affected in 1.2s[39m
+[34m2026-07-17 22:17:53[39m Executing: INSERT INTO Classroom (room_number, building, capacity) VALUES ('A101', 'Master Building', 40), ('A102', 'Main Building', 35), ('B201', 'Science Block', 50), ('C301', 'Engineering Block', 45), ('D401', 'Business Block', 30)
+[34m2026-07-17 22:17:53[39m [32mResult: 5 rows affected in 459ms[39m
+[34m2026-07-17 22:18:27[39m Executing: SELECT * FROM Classroom LIMIT 100
+[34m2026-07-17 22:18:27[39m [32mResult: 5 rows retrieved in 177ms[39m
+[34m2026-07-17 22:20:32[39m Executing: ALTER TABLE Students ADD CONSTRAINT fk_student_classroom FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id)
+[34m2026-07-17 22:20:32[39m [31mExecute fail : Cannot add or update a child row: a foreign key constraint fails ("alu_db"."#sql-ae_1d43", CONSTRAINT "fk_student_classroom" FOREIGN KEY ("classroom_id") REFERENCES "Classroom" ("classroom_id"))[39m
+[34m2026-07-17 22:21:20[39m Executing: DROP TABLE Students
+[34m2026-07-17 22:21:21[39m [32mResult: 0 rows affected in 199ms[39m
+[34m2026-07-17 22:21:39[39m Executing: CREATE TABLE Students (     student_id INT AUTO_INCREMENT PRIMARY KEY,     name VARCHAR(100) NOT NULL,     email VARCHAR(100) NOT NULL,     classroom_id INT,     enrollment_date DATE,     FOREIGN KEY (classroom_id) REFERENCES Classroom(classroom_id) )
+[34m2026-07-17 22:21:39[39m [32mResult: 0 rows affected in 226ms[39m
+[34m2026-07-17 22:22:42[39m Executing: INSERT INTO Students (name, email, classroom_id, enrollment_date) VALUES ('NDEGEYA Nina', 'u.ndegeya@alustudent.com', 1, '2026-01-15'), ('alex doi', 'alex@alustudent.com', 1, '2026-01-15'), ('Grace Mukamana', 'grace@alustudent.com', 2, '2026-01-15'), ('Eric Niyonzima', 'eric@alustudent.com', 2, '2026-01-15'), ('Alice Uwimana', 'alice@alustudent.com', 3, '2026-01-15')
+[34m2026-07-17 22:22:42[39m [32mResult: 5 rows affected in 183ms[39m
+[34m2026-07-17 22:23:06[39m Executing: UPDATE Students SET email = 'nina@alu.edu' WHERE student_id = 1
+[34m2026-07-17 22:23:06[39m [32mResult: 1 rows affected in 183ms[39m
+[34m2026-07-17 22:23:14[39m Executing: DELETE FROM Students WHERE student_id = 5
+[34m2026-07-17 22:23:14[39m [32mResult: 1 rows affected in 183ms[39m
+[34m2026-07-17 22:23:22[39m Executing: SELECT * FROM Students WHERE classroom_id = 1 LIMIT 100
+[34m2026-07-17 22:23:22[39m [32mResult: 2 rows retrieved in 170ms[39m
+[34m2026-07-17 22:23:42[39m Executing: SELECT * FROM Classroom LIMIT 100
+[34m2026-07-17 22:23:43[39m [32mResult: 5 rows retrieved in 285ms[39m
+[34m2026-07-17 22:25:53[39m Executing: UPDATE Classroom SET building = 'Administration building' WHERE capacity = 40
+[34m2026-07-17 22:25:53[39m [32mResult: 1 rows affected in 299ms[39m
+[34m2026-07-17 22:26:45[39m Executing: DELETE FROM Classroom WHERE capacity = 35
+[34m2026-07-17 22:26:45[39m [31mExecute fail : Cannot delete or update a parent row: a foreign key constraint fails ("alu_db"."Students", CONSTRAINT "Students_ibfk_1" FOREIGN KEY ("classroom_id") REFERENCES "Classroom" ("classroom_id"))[39m
+[34m2026-07-17 22:27:08[39m Executing: DELETE FROM Classroom WHERE capacity = 50
+[34m2026-07-17 22:27:09[39m [32mResult: 1 rows affected in 177ms[39m
+[34m2026-07-17 22:27:15[39m Executing: SELECT * FROM Classroom LIMIT 100
+[34m2026-07-17 22:27:15[39m [32mResult: 4 rows retrieved in 170ms[39m
+

@@ -1,0 +1,13 @@
+{
+    "1784311310592#foreignKey": [
+        {
+            "constraint_name": "Students_ibfk_1",
+            "table_schema": "alu_db",
+            "table_name": "Students",
+            "column_name": "classroom_id",
+            "referenced_schema": "alu_db",
+            "referenced_table": "Classroom",
+            "referenced_column": "classroom_id"
+        }
+    ]
+}
