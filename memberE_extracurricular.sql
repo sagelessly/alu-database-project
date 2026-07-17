@@ -25,3 +25,30 @@ INSERT INTO Student_Activities (student_id, activity_id) VALUES
 (2, 1),
 (3, 2),
 (4, 3);
+INSERT INTO Extra_Curricular_Activities (activity_name, category, faculty_advisor_id) VALUES
+('Drama Club', 'Arts', 2),
+('Chess Team', 'Academic', 1);
+
+CREATE TABLE Student_Courses (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+);
+
+INSERT INTO Student_Courses (student_id, course_id) VALUES
+(1, 6),
+(2, 6),
+(3, 7),
+(4, 7);
+
+UPDATE Extra_Curricular_Activities 
+SET category = 'STEM' 
+WHERE activity_name = 'Coding Club';
+
+DELETE FROM Extra_Curricular_Activities 
+WHERE activity_name = 'Chess Team';
+
+SELECT * FROM Extra_Curricular_Activities 
+WHERE category = 'Academic';
