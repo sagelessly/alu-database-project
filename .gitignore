@@ -1,0 +1,6 @@
+cache/
+storage/
+query/
+*.jar
+*.bin-log
+node_modules/
